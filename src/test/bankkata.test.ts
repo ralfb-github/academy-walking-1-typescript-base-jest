@@ -12,7 +12,7 @@ describe('test AccountService', () => {
     it("should print a empty account statement", () => {
         let printerMock = mock<IPrinter>();
         const accountService = new AccountService(printerMock);
-        expect(printerMock.print).toBeCalledWith("Date||Amount||Balance");
+        expect(printerMock.print.mock).toBeCalledWith("Date||Amount||Balance");
     }),
 
     it("should start with a balance of zero", () => {
